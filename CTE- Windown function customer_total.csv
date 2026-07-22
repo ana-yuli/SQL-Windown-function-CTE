@@ -1,0 +1,20 @@
+sql_query
+"WITH total_gasto AS (
+ SELECT
+ c.customer_id,
+ c.first_name,
+ c.last_name,
+ SUM(p.amount) AS total,
+ AVG(SUM(p.amount)) OVER() AS media_geral
+ FROM payment p
+ INNER JOIN customer c ON c.customer_id = p.customer_id
+ GROUP BY c.customer_id, c.first_name, c.last_name
+)
+SELECT
+ customer_id,
+ first_name,
+ last_name,
+ ROUND(total, 2) AS total
+FROM total_gasto
+WHERE total >= media_geral
+ORDER BY total DESC"
