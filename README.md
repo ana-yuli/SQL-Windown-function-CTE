@@ -27,3 +27,7 @@ SQL query developed using the **DVD Rental** database to calculate each customer
 - ORDER BY
 
 **Database:** PostgreSQL (DVD Rental)
+
+<h2>Query</h2>
+<img src="Captura de Tela 2026-07-23 às 15.53.10.png" width="700">
+
